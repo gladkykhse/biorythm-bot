@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 from math import sin, pi
 from datetime import datetime
 
+
+
 def daysFromBirthday(birthDay):
     currntDay = str(datetime.date(datetime.now()))
     currntDay = list(map(int,currntDay.split("-")))
@@ -69,20 +71,20 @@ def daysFromBirthday(birthDay):
     return days-1
 
 x = []
-y1 = []
-y2 = []
-y3 = []
+emotional = []
+intellectual = []
+physical = []
 
 birthDay = "2004.12.1"
 
 for i in range(daysFromBirthday(birthDay),daysFromBirthday(birthDay)+7):
-    y1.append(sin(2*pi*i/23)*100)
-    y2.append(sin(2*pi*i/28)*100)
-    y3.append(sin(2*pi*i/33)*100)
+    emotional.append(sin(2*pi*i/23)*100)
+    intellectual.append(sin(2*pi*i/28)*100)
+    physical.append(sin(2*pi*i/33)*100)
     x.append(i)
 
-plt.plot(x, y1, color="red")
-plt.plot(x, y2, color="green")
-plt.plot(x, y3, color="blue")
+plt.plot(x, emotional, color="red")
+plt.plot(x, intellectual, color="green")
+plt.plot(x, physical, color="blue")
 
 plt.show()
